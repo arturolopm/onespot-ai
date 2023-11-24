@@ -7,6 +7,7 @@ export const BotAvatar = () => {
         className=' p-1 rounded-full'
         src='/onespot-logo.jpeg'
       />
+      {/* 2.09 */}
     </Avatar>
   )
 }
