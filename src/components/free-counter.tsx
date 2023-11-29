@@ -22,8 +22,6 @@ export const FreeCounter = ({ apiLimitCount }: FreeCounterProps) => {
     return null
   }
 
-  console.log(apiLimitCount)
-
   return (
     <div className='px-3'>
       <Card className=' bg-white/10 border-0'>
