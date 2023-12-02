@@ -14,7 +14,6 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { Empty } from '@/components/empty'
 import { Loader } from '@/components/loader'
-import { cn } from '@/lib/utils'
 import {
   Select,
   SelectContent,
@@ -53,6 +52,8 @@ const ImagePage = () => {
       form.reset()
     } catch (error: any) {
       if (error?.response?.status === 403) {
+        console.log(error)
+
         proModal.onOpen()
       } else {
         toast.error('Something went wrong')
