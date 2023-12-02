@@ -17,6 +17,7 @@ import { Card } from './ui/card'
 import { cn } from '@/lib/utils'
 import { Check, Zap } from 'lucide-react'
 import { Button } from './ui/button'
+import toast from 'react-hot-toast'
 
 export const ProModal = () => {
   const [loading, setLoading] = useState(false)
@@ -27,7 +28,7 @@ export const ProModal = () => {
 
       window.location.href = response.data.url
     } catch (error) {
-      console.log(error, 'STRIPE_CLIENT_ERROR')
+      toast.error('Something went wrong')
     } finally {
       setLoading(false)
     }
@@ -67,12 +68,13 @@ export const ProModal = () => {
         </DialogHeader>
         <DialogFooter>
           <Button
+            disabled={loading}
             onClick={onSubscribe}
             size={'lg'}
             variant={'premium'}
             className=' w-full'>
             Upgrade
-            <Zap className=' w-4 h-4 ml-2 fill-white' />
+            <Zap className=' border-green-800 w-4 h-4 ml-2 fill-white' />
           </Button>
         </DialogFooter>
       </DialogContent>
